@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="reply-to" content="" />
+    <meta name="author" content="MANJI" />
+    <meta property="copyright" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀수정">
+    <meta property="og:description" content="사이트 설명글">
+    <meta property="og:image" content="이미지교체하기">
+    <meta property="og:url" content="여기도교체하기">
+
+    <title>MANJI</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+    <link rel="icon" href="/img/pavicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+<header></header>
+
+<main>
+    <article class="login normal">
+        <form id="" name="" method="post">
+            <section class="join_con">
+                <h2 class="txtc">회원가입</h2>             
+                <ul class="join_step">
+                    <li class="">
+                        <span class="first">STEP</span>
+                        <p class="num">01</p>
+                        <i class="xi-user-plus xi-2x"></i>
+                        <p class="name">회원가입</p>
+                        
+                    </li>
+                    <li class="active">
+                        <span class="first">STEP</span>
+                        <p class="num">02</p>
+                        <i class="xi-pen xi-2x"></i>
+                        <p>정보입력</p>
+                    </li>
+                    <li>
+                        <span class="first">STEP</span>
+                        <p class="num">03</p>
+                        <i class="xi-crown xi-2x"></i>
+                        <p>가입완료</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="join_write">
+                <h3>법인 정보 입력</h3>
+                <div>
+                    <label>사업자 등록번호<span class="point_red">*</span></label>
+                    <input type="number">
+                </div>
+                <div>
+                    <label >상호명(법인명) <span class="point_red">*</span></label>
+                    <input type="text" placeholder="상호명">
+                </div>
+
+                <div>
+                    <label >대표자명 <span class="point_red">*</span></label>
+                    <input type="text" placeholder="대표자명">
+                </div>
+                <div class="join_addfile">
+                    <label>사업자 등록증<span class="point_red">*</span></label>
+                    <label class="custom">
+                        <input type="file">
+                        <span class="file_name">파일을 선택해주세요.</span>
+                        <span class="file_btn">파일선택</span>
+                    </label>
+                </div>
+            </section>
+            <section class="join_write">
+                <h3>회원 정보 입력</h3>
+                <div>
+                    <label >이름 <span class="point_red">*</span></label>
+                    <input type="text" placeholder="" readonly>
+                </div>
+                <div>
+                    <label>휴대폰 번호</label>
+                    <input type="text" placeholder="" readonly>
+                </div>
+                <div>
+                    <label for="joinid">아이디<span class="point_red">*</span></label>
+                    <input type="text" name="joinid" id="joinid" placeholder="6~16자/영문, 숫자조합"  class="input_short">
+                    <button type="button" class="id_check btn btn_point" id="id_check">아이디 중복 검색</button>
+                </div>
+                <div>
+                    <label for="joinpw">비밀번호<span class="point_red">*</span></label>
+                    <input type="text" class="joinpw" id="joinpw" placeholder="8~16자/영문,숫자.특수문자 조합">
+                </div>
+                <div>
+                    <label for="joinpwagain">비밀번호재입력<span class="point_red">*</span></label>
+                    <input type="text" name="joinpwagain" id="joinpwagain" placeholder="비밀번호를 한번 더 입력해 주세요">
+                </div>
+                <div>
+                    <label for="joinemail">이메일<span class="point_red">*</span></label>
+                    <input type="text" name="joinemail" id="joinemail" placeholder="이메일을 입력해주세요">
+                </div>
+                <div>
+                    <label>주소</label>
+                    <div>
+                        <input type="text" class="input_short" readonly>
+                        <button type="button" class="btn_point">우편번호 찾기</button>                        
+                    </div>
+                    <div>
+                        <input type="text" placeholder="주소" readonly>                        
+                    </div>
+                    <div>
+                        <input type="text" placeholder="상세주소">
+                    </div>
+                </div>
+                <div>
+                    <label for="joinrecom">추천인 ID</label>
+                    <input type="text" name="joinrecom" id="joinrecom" placeholder="추천인 ID 입력">
+                </div>
+            </section>
+            <div>
+                <button type="button" class="btn btn_point btn100" onclick="location.href='joinstep03.html'">회원가입</button>
+            </div>
+
+            
+        </form>
+    </article>
+    <div class="id_check_pop">
+        <div class="modal_box">
+            <h4>아이디 중복 확인</h4>
+            <ul>
+                <li>
+                    <span><label>아이디</label></span>
+                    <input type="text"><button type="button" class="btn btn_point">검색</button>
+                </li>
+                <li>
+                    <span>검색결과</span>
+                </li>
+            </ul>
+            <div class="btn_2set">              
+                <button type="button" class="btn close">닫기</button>   
+                <button type="button" class="btn btn_point">사용하기</button> 
+            </div>            
+        </div>
+    </div>
+</main>
+
+<footer>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+  $(document).on('ready', function() {
+
+    $(".join_addfile input[type=file]").on("change", function() {
+        const fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".file_name").text(fileName || "파일을 선택해주세요.");
+    });
+
+    $('.id_check').on("click", function () {
+       $('.id_check_pop').show();
+    });
+
+    $('.close').on("click", function () {
+       $(this).closest('.id_check_pop').hide();
+    });
+
+  });
+
+</script>
+</body>
+
+</html>
+

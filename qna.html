@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="reply-to" content="" />
+    <meta name="author" content="MANJI" />
+    <meta property="copyright" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀수정">
+    <meta property="og:description" content="사이트 설명글">
+    <meta property="og:image" content="이미지교체하기">
+    <meta property="og:url" content="여기도교체하기">
+
+    <title>MANJI</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+    <link rel="icon" href="/img/pavicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+<header></header>
+
+<main>
+    <article class="normal com_width">
+        <h2 class="h2_title">자주 묻는 질문</h2>
+            <ul class="qna">
+                <li class="qna_q">
+                    <div class="qna_title">
+                        <span>Q </span>
+                        <span>                            
+                            회원 가입은 어떻게 하나요?
+                        </span>
+                    </div>
+                    <div class="qna_answer">
+                        <span class="qna_title">A </span>
+                        법인의 경우 사업자 등록증을 첨부해주시면 확인하고 가입시켜드리고 있습니다.
+                        개인의 경우 회원 가입 후 바로 사용 가능합니다.
+
+                    </div>
+
+                </li>
+                <li class="qna_q">
+
+                    <div class="qna_title">
+                        <span>Q </span>
+                        <span>                            
+                            등급은 어떻게 바꾸나요?
+                        </span>
+                    </div>
+                    <div class="qna_answer">
+                        <span class="qna_title">A</span>
+                        3개월간의 주문 금액을 기준으로 자동 변경됩니다.
+
+                    </div>
+                </li>
+            </ul>
+            <div class="qna_more">
+                더 궁금하신 사항은 고객센터를 통해 문의해 주시면 성실히 답변해 드리겠습니다.
+                <button type="button" class="btn">문의하기 바로 가기 ></button>
+
+            </div>
+    </article>
+</main>
+
+<footer>
+</footer>
+<script>
+    $('.qna_answer').hide();
+$('.qna_q').click(function(e){
+    e.preventDefault();
+         $('.qna_answer').slideUp();
+         if ($(this).children('.qna_answer').is(':hidden')){
+            $(this).children('.qna_answer').slideDown();
+         } else{
+            $(this).children('.qna_answer').slideUp();
+         }
+      });
+</script>
+</body>
+
+</html>
+

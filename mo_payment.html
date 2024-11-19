@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="reply-to" content="" />
+    <meta name="author" content="MANJI" />
+    <meta property="copyright" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀수정">
+    <meta property="og:description" content="사이트 설명글">
+    <meta property="og:image" content="이미지교체하기">
+    <meta property="og:url" content="여기도교체하기">
+
+    <title>MANJI</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick-theme.css">
+    <link rel="icon" href="/img/pavicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<header class="mo_header">
+    <div class="mo_head">
+        <h1><a href="#"><img src="./img/bi.png" alt="Manji logo"></a></h1>
+        <a href="#" class="mobile_menu_open"><i class="xi-bars"></i></a>
+    </div>
+    <div class="mo_hidden">
+        <ul>
+            <li><a href="mo_payment.html"><i class="xi-wallet"></i> 결제 내역 확인</a></li>
+        </ul>
+    </div>    
+</header>
+<main>
+    <article class="mo_com">
+        <form id="" name="" method="post">
+        <section class="mo_payment_src">
+            <p>거래기간 조회</p>
+            <div class="cal">
+                <input type="date"> ~ <input type="date">
+            </div>            
+            <button type="button" class="btn btn_gray">검색</button>
+        </section>
+        <section>
+            <span>전체 <span class="point bold">6 </span>건</span>
+            <div class="">
+                <ul class="mo_payment_list">
+                    <li>
+                        <div>
+                            <p>결제일자</p>
+                            <p>2024-10-21 10:41:33</p>
+                        </div>
+                        <div>
+                            <p>상품정보</p>
+                            <p>신세계 상품권</p>
+                        </div>
+                        <div>
+                             <p>결제금액</p>
+                            <p>500,000</p>
+                        </div>
+                        <div>
+                            <p>상태</p>
+                            <p>결제 완료</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p>결제일자</p>
+                            <p>2024-10-21 10:41:33</p>
+                        </div>
+                        <div>
+                            <p>상품정보</p>
+                            <p>신세계 상품권</p>
+                        </div>
+                        <div>
+                             <p>결제금액</p>
+                            <p>500,000</p>
+                        </div>
+                        <div>
+                            <p>상태</p>
+                            <p>결제 완료</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="paging">
+                    <li><a href="#"><<</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">>></a></li>
+                </ul>
+            </div>
+        </section>
+        </form>
+    </article>
+</main>
+
+<footer class="mo_footer">
+    <div class="mo_foot">
+        <addresss>
+            <p>
+                상호명 : (주)만지 │ 대표이사 : 홍길동
+                주소 : 00000 서울특별시 강남구 강남대로 000 (강남동 올포유빌딩)
+            </p>
+            <p>
+                사업자등록번호 : 123-456-7890
+                통신 판매업 신고 2020-서울성동-00681
+                개인정보보호책임자 : 홍길동
+            </p>
+            <p>
+                © 2024 MANJI ALL RIGHTS RESERVED.
+            </p>
+        </addresss>
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(document).on('ready', function() {
+    $(".mobile_menu_open").click(function(e){
+        e.preventDefault();
+        $('.mo_hidden').slideToggle(200);
+
+        if($(".mobile_menu_open").find('i').hasClass("xi-bars")){        
+            $(".mobile_menu_open").find('i').removeClass("xi-bars").addClass('xi-close');
+
+        } else if ($(".mobile_menu_open").find('i').hasClass("xi-close")){ 
+            $(".mobile_menu_open").find('i').removeClass("xi-close").addClass('xi-bars');
+        } 
+    });
+
+  });
+</script>
+</body>
+
+</html>
+
