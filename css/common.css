@@ -405,6 +405,10 @@ header .head .head_main .head_menu h1 img {
   vertical-align: middle;
 }
 
+header .head .head_main .head_menu h1 span {
+  vertical-align: middle;
+}
+
 header .head .head_main .head_menu li:nth-of-type(n+2) {
   margin-right: 10px;
 }
@@ -481,6 +485,7 @@ footer .foot .footer_left .foot_menu li {
 
 footer .foot .footer_left addresss p {
   color: #888;
+  word-break: keep-all;
 }
 
 footer .foot .footer_right {
@@ -3894,7 +3899,7 @@ main .board_confirm .order_confirm_board li .title {
     margin: 0 auto;
     padding: 0;
     overflow-x: scroll;
-    min-width: 570px;
+    min-width: 600px;
   }
   main .board_detail {
     width: 100%;

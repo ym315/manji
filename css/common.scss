@@ -307,6 +307,7 @@ header{
             margin-right:5px;
             vertical-align: middle;
           }
+          span{vertical-align: middle;}
         }
         li:nth-of-type(n+2){margin-right:10px;}
       }
@@ -339,6 +340,7 @@ footer{
         addresss{
           p{
             color:$c88;
+            word-break: keep-all;
           }
         }
       }
@@ -1968,6 +1970,7 @@ main{
 
     h1{      
       img{max-width: 30px;vertical-align: middle;}
+
     }
   }
   .mo_hidden{
@@ -2437,7 +2440,7 @@ main{
   .board{
     @include layout(100%,0 auto,0);
     overflow-x: scroll;
-    min-width: 570px;
+    min-width: 600px;
 
   }
   .board_detail{
