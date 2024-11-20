@@ -236,7 +236,7 @@ body {
     min-width: 320px;
     max-width: 1920px;
     position: relative;
-    font-size: 15px;
+    font-size: 14px;
     overflow-x: hidden;
     word-break: break-all;
     color: $c23;
@@ -1599,7 +1599,7 @@ main{
         >div{
           width: auto;
           margin: 0;
-          .name{font-size: 30px}
+          .name{font-size: 1.5rem}
           span{font-size: 13px; color:$manji}
         }
       }
@@ -1612,8 +1612,7 @@ main{
             padding-right: 50px;
             text-align: center;
             &:last-child{border-right:none}
-
-            span{font-weight: bold; font-size: 22px;}
+            span{font-weight: bold; font-size: 1.3rem;}
           }
         }
       }
@@ -2028,20 +2027,22 @@ main{
       .head_notice{display: none;}
       //모바일 메인
       .m_head_main{
-        display: block;
-        height: 40px;
+        display: block;        
         .head_menu{
           @include layout(100%,0 auto,0 15px);
           @include display(flex,space-between,center);
           position: relative;
+          height: 50px;
           h1{
             width:40%;            
             img{max-width: 30px; vertical-align: middle; margin-right:5px}
+            span{vertical-align: middle; font-size: 1.1rem;}
           }
           >.right_menu{            
             width: 70%;
             @include display(flex,flex-end,center);
             a{margin: 0 5px;}
+            i{font-size: 1.4em;}
           }
         }
       }
@@ -2548,6 +2549,7 @@ main{
             @include display(flex,space-between,center);
             li{
               border-right: none;
+              font-size: 13px;
             }
           }
         }  

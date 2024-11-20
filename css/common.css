@@ -266,7 +266,7 @@ body {
   min-width: 320px;
   max-width: 1920px;
   position: relative;
-  font-size: 15px;
+  font-size: 14px;
   overflow-x: hidden;
   word-break: break-all;
   color: #232323;
@@ -2673,7 +2673,7 @@ main .mypage_normaltop .top .left > div {
 }
 
 main .mypage_normaltop .top .left > div .name {
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 main .mypage_normaltop .top .left > div span {
@@ -2709,7 +2709,7 @@ main .mypage_normaltop .top .right > ul li:last-child {
 
 main .mypage_normaltop .top .right > ul li span {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.3rem;
 }
 
 main .mypage_normaltop .bottom {
@@ -3420,7 +3420,6 @@ main .board_confirm .order_confirm_board li .title {
   }
   header .head .m_head_main {
     display: block;
-    height: 40px;
   }
   header .head .m_head_main .head_menu {
     width: 100%;
@@ -3436,6 +3435,7 @@ main .board_confirm .order_confirm_board li .title {
         -ms-flex-align: center;
             align-items: center;
     position: relative;
+    height: 50px;
   }
   header .head .m_head_main .head_menu h1 {
     width: 40%;
@@ -3444,6 +3444,10 @@ main .board_confirm .order_confirm_board li .title {
     max-width: 30px;
     vertical-align: middle;
     margin-right: 5px;
+  }
+  header .head .m_head_main .head_menu h1 span {
+    vertical-align: middle;
+    font-size: 1.1rem;
   }
   header .head .m_head_main .head_menu > .right_menu {
     width: 70%;
@@ -3459,6 +3463,9 @@ main .board_confirm .order_confirm_board li .title {
   }
   header .head .m_head_main .head_menu > .right_menu a {
     margin: 0 5px;
+  }
+  header .head .m_head_main .head_menu > .right_menu i {
+    font-size: 1.4em;
   }
   header .head .mobile_menu {
     background: #fff;
@@ -3984,6 +3991,7 @@ main .board_confirm .order_confirm_board li .title {
   }
   main .mypage_normaltop .top .right > ul li {
     border-right: none;
+    font-size: 13px;
   }
   main .mypage_normalbtm .my_cash_charge {
     display: -webkit-box;
