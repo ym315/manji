@@ -137,6 +137,7 @@ input, textarea, select, button {
   outline: 0;
   height: 50px;
   vertical-align: middle;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 input::placeholder{
   color:$ccc;
@@ -183,13 +184,19 @@ div {
 
 
 .btn {
+  min-width: 20%;
   height: 50px;
   border: none;
   color: $c55;
-  border: 1px solid $ccc;
+  border: 1px solid $c88;
   border-radius: 4px;
   font-size: 14px;
-    // font-weight: 500;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+  text-align: center;
+
+
   &:hover{
     background: $manji;
     color:$fff;
@@ -202,6 +209,7 @@ div {
 .btn_red{
   background:$pointred;
   color:$fff;
+  border: none;
   &:hover{
     background: $pointred;
   }
@@ -309,7 +317,14 @@ header{
       }
       .head_member{
         @include display(flex,flex-start,center);
-        li{margin:0 5px;}
+        li{
+          margin:0 5px;
+          i{font-size: 1.3em;}
+          span{vertical-align: middle;}
+  
+        }
+        
+
       }
     }
     .m_head_main{display: none}
@@ -910,9 +925,10 @@ main{
     }
     label{display: block; text-align: left;}
     input[type="text"],input[type="number"] {width:100%;}
-    input.input_short{width:60%; margin-right: 5px;}
-    input.input_short_25{width:25%; margin-right: 5px;}
+    input.input_short{width:60%; margin-right: 8px;}
+    input.input_short_25{width:25%; margin-right: 8px;}
     input:read-only{background:$f1}
+    select{margin-right:8px;}
     //첨부파일용 
     .join_addfile{
       position: relative;
@@ -1425,6 +1441,7 @@ main{
     &.board_20{flex-basis: 20%;}
     &.board_25{flex-basis: 25%;}
     &.board_30{flex-basis: 30%;}
+    &.board_40{flex-basis: 40%; text-align: left;}
     &.board_45{flex-basis: 45%; text-align: left;}
     &.board_60{flex-basis: 60%; text-align: left;}
     &.board_70{flex-basis: 70%; text-align: left;}
@@ -1434,7 +1451,7 @@ main{
     border-top: 1px solid $ccc;
     text-align: center;
     background: $f7;
-    >div.board_60,.board_45{text-align: center;}
+    >div.board_60,.board_70,.board_45,.board_40{text-align: center;}
   }
   &.point{
     background: $f1;
@@ -1637,8 +1654,8 @@ main{
       border-bottom: 1px solid $c55;
       li{
         @include display(flex,center,center);
-        width:23%;
-        margin-right:2.66%;
+        width:32%;
+        margin-right:2%;
         margin-bottom: 2.66%;
         flex-direction: column;
         border:1px solid $ccc;
@@ -1646,7 +1663,7 @@ main{
         padding:20px;
         color: $c55;
         cursor: pointer;
-        &:nth-of-type(4n){margin-right: 0;}
+        &:nth-of-type(3n){margin-right: 0;}
         span{
           padding-bottom: 10px;
           &.price{font-size: 35px; font-weight: bold;}
@@ -1665,38 +1682,34 @@ main{
     .my_cash_charge_select{
       @include display(flex,space-between,center);
       margin: 30px 0;
-      >div,ul{
+      >div{
         @include display(flex,center,center);
         @include layout(49%,0,0);
         background: $f8;        
         height: 15vh;        
         border-radius: 20px;
-      }
-      >div{
         select{
           margin-left: 50px;
           width: 130px;
           height: 40px;
         }
-
+        &.my_cash_charge_select_detail{
+          @include display(flex,center,center);
+          flex-direction: column;
+          text-align: center;
+          >div{
+            @include display(flex,center,center);
+            .title{width: 45%; text-align: right; margin-right:5%;}
+            .cash{
+              width: 50%;text-align: left;
+              .point{font-size: 1.3rem; font-weight: bold; color:$pointred;}
+              input[type="number"]{height:40px;}
+            }
+            
+          }          
+        }
       }
-      >ul{
-        flex-direction: column;
-        li{
-          @include layout(70%,0 auto,0);
-          @include display(flex,flex-start,center);
-          .title{
-            display: inline-block;
-            width: 30%;
-          }
-        &:first-child{
-          .cash{color:$manji; font-size: 25px; font-weight: bold;}
-          }
-        &:last-child{
-          .cash{color:$pointred; font-size: 25px; font-weight: bold;}
-        }
-        }
-      }      
+  
     }
 }
   .my_cash_caption{
@@ -1720,13 +1733,14 @@ main{
       display: inline-block;      
     }
     >div{
-      &:last-child{margin-left: 30px;}      
+      // &:last-child{margin-left: 30px;}      
       >div{margin-right: 20px;}
     }    
     input, button,select{height: 40px;}
-    button
-    {min-width: 100px;
-      margin-right: 5px;
+    
+    button{
+    min-width: 100px;
+    margin-right: 5px;
     }
   }
   .my_cash_gift{
@@ -1736,6 +1750,12 @@ main{
       @include display(flex,flex-start,center);
       select,input,button{height: 40px; margin: 0 5px; min-width: 100px;}
     }
+  }
+  .my_cash_gift_m{
+    display: none;
+  }
+  .my_cash_gift_m_src{
+    display: none;
   }
   .cash_refund_popup{
     @include display(flex,center,center);
@@ -2051,6 +2071,7 @@ main{
         padding: 0 15px;
         border-left:1px solid $ccc;
         font-size: 13px;
+        i{font-size: 1.2em;}
         .top_menu{
           @include display(flex,space-between,center);          
           h1{width:30%;}
@@ -2069,7 +2090,6 @@ main{
           border-radius: 10px;
           font-size: 13px;
           margin-bottom: 15px;
-
           >span{margin: 0 3px;}
         }
 
@@ -2086,7 +2106,7 @@ main{
                 display: inline-block;
               }
             }
-            button{height: 25px; width:55px; font-size: 11.5px; border: none;}
+            button{height: 25px; width:fit-content; font-size: 11.5px; border: none;}
            }
            &.minfo2{       
             margin: 20px auto;
@@ -2422,8 +2442,7 @@ main{
     width:95%;
   } 
   //공지사항
-  .board_search{
-    width:95%;
+  .board_search{    
     >select{width:25%;}
     >input[type="text"]{width:50%;}
     >button{width:15%;}
@@ -2460,12 +2479,13 @@ main{
       flex-wrap: wrap;
       section{
         &.mypage_left{
-          width:95%;
+          width:98%;
           min-width: 200px;
         }
         &.mypage_right{
-          width:95%;
+          width:98%;
           min-width: 320px;
+          margin:0 auto;
         }
       }
     }
@@ -2496,8 +2516,7 @@ main{
       }
     }
     //마이페이지 우측
-    .mypage_normaltop{
-      
+    .mypage_normaltop{      
       .top{
         flex-wrap: wrap;
         .left{          
@@ -2511,9 +2530,17 @@ main{
           width: 100%;
           >ul{
             @include display(flex,space-between,center);
+            flex-wrap: wrap;
             li{
+              width:100%;
               border-right: none;
+              padding: 10px;
               font-size: 13px;
+              margin-bottom: 10px;
+              background: $fff;
+              border-radius: 20px;
+              span{color:$manji;}
+
             }
           }
         }  
@@ -2527,11 +2554,10 @@ main{
         @include display(flex,flex-start,flex-start);
         flex-wrap: wrap;
         li{
-          width:30.5%;
-          @include display(flex,center,center);   
+          width:100%;
+          margin-right: 0;
+          @include display(flex,center,center);
           
-          &:nth-of-type(3n){margin-right:0;}
-          &:nth-of-type(4n){margin-right: 2.66%;}
           span{
             &.price{font-size: 1rem;}
           }
@@ -2540,39 +2566,166 @@ main{
 
       .my_cash_charge_select{
         flex-wrap: wrap;
-        >div,ul{
+        >div{
           width:100%;
           margin-bottom: 10px;
-        }
-        >ul{
-          flex-direction: column;
-          li{
-            @include layout(95%,0 auto,0);
+          text-align: center;
+          flex-wrap: wrap;
+          padding: 20px;
+          height: auto;
+          >span{width:100%; display: block;}
+          select{width:100%; margin:5px auto;}
+          &.my_cash_charge_select_detail{
+            flex-wrap: wrap;
+            flex-direction: row;
+            >div{
+              flex-wrap: wrap;
+              margin: 5px auto;
+              .title,.cash{
+                width: 100%; 
+                margin:0 auto; 
+                text-align: center;
+              }    
+              .cash{                                
+                input[type="number"]{width:100%; height:40px; margin-top:5px;}
+              }         
+            }          
           }
         }      
       }
+
   }
     .my_cash_list_src{
       flex-wrap: wrap;
       div{
         width:100%;
-        margin-bottom: 10px;        
+        margin-bottom: 10px;
+        text-align: center;
+        .src_title{display: block; margin-bottom: 5px;}
       }
       >div{
         &:last-child{
           @include display(flex,space-between,center);
-          button{width:49%;}        
+          flex-wrap: wrap; 
+          margin: 0;
+          button{width:100%; margin-bottom: 10px;}        
         } 
-      }    
+      }
+      select{width:50%;}
+      input[type="text"]{width:100%; margin:5px auto;}
+      button{
+        margin:0;
+        }
 
     }
 
     .my_cash_gift{
+
       margin: 20px auto;
       >div{margin: 20px auto;}
       .gift_list{
         @include display(flex,flex-start,center);
+        flex-wrap: wrap;
         select,input,button{height: 40px; margin: 0 5px; min-width: 100px;}
+        input,button{width:100%; display: block; margin-top: 10px;}
+      }
+    }
+    div.board_pc{margin: 20px auto; display: none;}
+    .my_cash_gift_m{
+      display: block;
+      ul{
+        li{
+          font-size: 15px;
+          margin: 10px auto;          
+          .gift_m_title{
+            border-top: 1px solid $eee; 
+            border-bottom: 2px solid #ccc;   
+            @include display(flex,space-between,center);            
+            font-size: 14px; 
+            align-items: center;
+            padding: 15px 10px;    
+            >div{
+              width:50%;
+              margin:0;           
+            }  
+            >div:first-child{text-align: left;}
+            >div:last-child{text-align: right;}                
+            div.point{font-weight: bold; font-size: 1.1rem}
+          }          
+          .gift_m_content{
+            @include display(flex,space-between,center);
+            flex-wrap: wrap;
+            background: $f5;
+            padding: 15px 10px;    
+            >div{
+              width:50%;
+              padding:5px 0;
+            &:nth-of-type(2n){
+              text-align: right;
+              font-weight: bold;
+            }
+            }
+          }
+          .gift_m_btn{
+            @include display(flex,center,center);
+            margin-top: 10px;;
+            button{width:100px; height:30px;}
+
+          }
+        }
+      }
+    }
+    .my_cash_gift_m_src{      
+      display: block;
+      ul{
+        li{
+          font-size: 15px;
+          margin: 10px auto;
+          .gift_m_title{  
+            @include display(flex,space-between,center);            
+            font-size: 14px; 
+            align-items: center;
+            padding: 15px 10px;   
+            background: $f1;
+            >div{
+              width:50%;
+              margin:0;           
+            }  
+            >div:first-child{text-align: left;}
+            >div:last-child{text-align: right;}                
+            div.point{font-weight: bold; font-size: 1.1rem}
+          }          
+          .gift_m_content{
+            @include display(flex,space-between,center);
+            flex-wrap: wrap;  
+            border: 1px solid $ccc;       
+            >div{
+              width:50%;
+              padding:10px;
+              border-bottom: 1px solid #ccc;
+            &:nth-of-type(2n){
+              border-left: 1px solid $ccc;
+              text-align: right;
+              font-weight: bold;
+              color:$manji;
+            }
+            &:last-child{border-bottom: none;}
+            }
+          }
+          .gift_m_btn{
+            @include display(flex,center,center);
+            button{
+              width:100%;
+              background: transparent;
+              border:none;
+              background:$c55;
+              border-radius: 0;
+              color:$fff;
+              margin-top: -1px;
+            }
+
+          }
+        }
       }
     }
     .board_confirm{

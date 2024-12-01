@@ -113,6 +113,7 @@ input, textarea, select, button {
   outline: 0;
   height: 50px;
   vertical-align: middle;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 input::-webkit-input-placeholder {
@@ -176,12 +177,17 @@ div {
 }
 
 .btn {
+  min-width: 20%;
   height: 50px;
   border: none;
   color: #555;
-  border: 1px solid #ccc;
+  border: 1px solid #888;
   border-radius: 4px;
   font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+  text-align: center;
 }
 
 .btn:hover {
@@ -197,6 +203,7 @@ div {
 .btn_red {
   background: #c30d23;
   color: #fff;
+  border: none;
 }
 
 .btn_red:hover {
@@ -427,6 +434,14 @@ header .head .head_main .head_member {
 
 header .head .head_main .head_member li {
   margin: 0 5px;
+}
+
+header .head .head_main .head_member li i {
+  font-size: 1.3em;
+}
+
+header .head .head_main .head_member li span {
+  vertical-align: middle;
 }
 
 header .head .m_head_main {
@@ -1379,12 +1394,12 @@ main .join_write input[type="text"], main .join_write input[type="number"] {
 
 main .join_write input.input_short {
   width: 60%;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 main .join_write input.input_short_25 {
   width: 25%;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 main .join_write input:-moz-read-only {
@@ -1393,6 +1408,10 @@ main .join_write input:-moz-read-only {
 
 main .join_write input:read-only {
   background: #f1f1f1;
+}
+
+main .join_write select {
+  margin-right: 8px;
 }
 
 main .join_write .join_addfile {
@@ -2396,6 +2415,12 @@ main .board li > div.board_30 {
       flex-basis: 30%;
 }
 
+main .board li > div.board_40 {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  text-align: left;
+}
+
 main .board li > div.board_45 {
   -ms-flex-preferred-size: 45%;
       flex-basis: 45%;
@@ -2420,7 +2445,7 @@ main .board li.head {
   background: #f7f7f7;
 }
 
-main .board li.head > div.board_60, main .board li.head .board_45 {
+main .board li.head > div.board_60, main .board li.head .board_70, main .board li.head .board_45, main .board li.head .board_40 {
   text-align: center;
 }
 
@@ -2754,8 +2779,8 @@ main .mypage_normalbtm .my_cash_charge li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 23%;
-  margin-right: 2.66%;
+  width: 32%;
+  margin-right: 2%;
   margin-bottom: 2.66%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2768,7 +2793,7 @@ main .mypage_normalbtm .my_cash_charge li {
   cursor: pointer;
 }
 
-main .mypage_normalbtm .my_cash_charge li:nth-of-type(4n) {
+main .mypage_normalbtm .my_cash_charge li:nth-of-type(3n) {
   margin-right: 0;
 }
 
@@ -2806,7 +2831,7 @@ main .mypage_normalbtm .my_cash_charge_select {
   margin: 30px 0;
 }
 
-main .mypage_normalbtm .my_cash_charge_select > div, main .mypage_normalbtm .my_cash_charge_select ul {
+main .mypage_normalbtm .my_cash_charge_select > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2830,43 +2855,54 @@ main .mypage_normalbtm .my_cash_charge_select > div select {
   height: 40px;
 }
 
-main .mypage_normalbtm .my_cash_charge_select > ul {
+main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
 }
 
-main .mypage_normalbtm .my_cash_charge_select > ul li {
-  width: 70%;
-  margin: 0 auto;
-  padding: 0;
+main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-main .mypage_normalbtm .my_cash_charge_select > ul li .title {
-  display: inline-block;
-  width: 30%;
+main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .title {
+  width: 45%;
+  text-align: right;
+  margin-right: 5%;
 }
 
-main .mypage_normalbtm .my_cash_charge_select > ul li:first-child .cash {
-  color: #6767a6;
-  font-size: 25px;
+main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .cash {
+  width: 50%;
+  text-align: left;
+}
+
+main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .cash .point {
+  font-size: 1.3rem;
   font-weight: bold;
-}
-
-main .mypage_normalbtm .my_cash_charge_select > ul li:last-child .cash {
   color: #c30d23;
-  font-size: 25px;
-  font-weight: bold;
+}
+
+main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .cash input[type="number"] {
+  height: 40px;
 }
 
 main .my_cash_caption {
@@ -2902,10 +2938,6 @@ main .my_cash_list_src div {
   width: auto;
   margin: 0;
   display: inline-block;
-}
-
-main .my_cash_list_src > div:last-child {
-  margin-left: 30px;
 }
 
 main .my_cash_list_src > div > div {
@@ -2945,6 +2977,14 @@ main .my_cash_gift .gift_list select, main .my_cash_gift .gift_list input, main 
   height: 40px;
   margin: 0 5px;
   min-width: 100px;
+}
+
+main .my_cash_gift_m {
+  display: none;
+}
+
+main .my_cash_gift_m_src {
+  display: none;
 }
 
 main .cash_refund_popup {
@@ -3480,6 +3520,9 @@ main .board_confirm .order_confirm_board li .title {
     border-left: 1px solid #ccc;
     font-size: 13px;
   }
+  header .head .mobile_menu i {
+    font-size: 1.2em;
+  }
   header .head .mobile_menu .top_menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3552,7 +3595,9 @@ main .board_confirm .order_confirm_board li .title {
   }
   header .head .mobile_menu .mobile_minfo > div.minfo1 button {
     height: 25px;
-    width: 55px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     font-size: 11.5px;
     border: none;
   }
@@ -3886,9 +3931,6 @@ main .board_confirm .order_confirm_board li .title {
   main .term {
     width: 95%;
   }
-  main .board_search {
-    width: 95%;
-  }
   main .board_search > select {
     width: 25%;
   }
@@ -3926,12 +3968,13 @@ main .board_confirm .order_confirm_board li .title {
         flex-wrap: wrap;
   }
   main .mypage section.mypage_left {
-    width: 95%;
+    width: 98%;
     min-width: 200px;
   }
   main .mypage section.mypage_right {
-    width: 95%;
+    width: 98%;
     min-width: 320px;
+    margin: 0 auto;
   }
   main .mypage_menu {
     width: 100%;
@@ -3988,10 +4031,20 @@ main .board_confirm .order_confirm_board li .title {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   main .mypage_normaltop .top .right > ul li {
+    width: 100%;
     border-right: none;
+    padding: 10px;
     font-size: 13px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 20px;
+  }
+  main .mypage_normaltop .top .right > ul li span {
+    color: #6767a6;
   }
   main .mypage_normalbtm .my_cash_charge {
     display: -webkit-box;
@@ -4007,7 +4060,8 @@ main .board_confirm .order_confirm_board li .title {
         flex-wrap: wrap;
   }
   main .mypage_normalbtm .my_cash_charge li {
-    width: 30.5%;
+    width: 100%;
+    margin-right: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4018,12 +4072,6 @@ main .board_confirm .order_confirm_board li .title {
         -ms-flex-align: center;
             align-items: center;
   }
-  main .mypage_normalbtm .my_cash_charge li:nth-of-type(3n) {
-    margin-right: 0;
-  }
-  main .mypage_normalbtm .my_cash_charge li:nth-of-type(4n) {
-    margin-right: 2.66%;
-  }
   main .mypage_normalbtm .my_cash_charge li span.price {
     font-size: 1rem;
   }
@@ -4031,20 +4079,45 @@ main .board_confirm .order_confirm_board li .title {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  main .mypage_normalbtm .my_cash_charge_select > div, main .mypage_normalbtm .my_cash_charge_select ul {
+  main .mypage_normalbtm .my_cash_charge_select > div {
     width: 100%;
     margin-bottom: 10px;
+    text-align: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 20px;
+    height: auto;
   }
-  main .mypage_normalbtm .my_cash_charge_select > ul {
-    -webkit-box-orient: vertical;
+  main .mypage_normalbtm .my_cash_charge_select > div > span {
+    width: 100%;
+    display: block;
+  }
+  main .mypage_normalbtm .my_cash_charge_select > div select {
+    width: 100%;
+    margin: 5px auto;
+  }
+  main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  main .mypage_normalbtm .my_cash_charge_select > ul li {
-    width: 95%;
+  main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 5px auto;
+  }
+  main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .title, main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .cash {
+    width: 100%;
     margin: 0 auto;
-    padding: 0;
+    text-align: center;
+  }
+  main .mypage_normalbtm .my_cash_charge_select > div.my_cash_charge_select_detail > div .cash input[type="number"] {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
   }
   main .my_cash_list_src {
     -ms-flex-wrap: wrap;
@@ -4053,6 +4126,11 @@ main .board_confirm .order_confirm_board li .title {
   main .my_cash_list_src div {
     width: 100%;
     margin-bottom: 10px;
+    text-align: center;
+  }
+  main .my_cash_list_src div .src_title {
+    display: block;
+    margin-bottom: 5px;
   }
   main .my_cash_list_src > div:last-child {
     display: -webkit-box;
@@ -4064,9 +4142,23 @@ main .board_confirm .order_confirm_board li .title {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0;
   }
   main .my_cash_list_src > div:last-child button {
-    width: 49%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  main .my_cash_list_src select {
+    width: 50%;
+  }
+  main .my_cash_list_src input[type="text"] {
+    width: 100%;
+    margin: 5px auto;
+  }
+  main .my_cash_list_src button {
+    margin: 0;
   }
   main .my_cash_gift {
     margin: 20px auto;
@@ -4084,11 +4176,182 @@ main .board_confirm .order_confirm_board li .title {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   main .my_cash_gift .gift_list select, main .my_cash_gift .gift_list input, main .my_cash_gift .gift_list button {
     height: 40px;
     margin: 0 5px;
     min-width: 100px;
+  }
+  main .my_cash_gift .gift_list input, main .my_cash_gift .gift_list button {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+  }
+  main div.board_pc {
+    margin: 20px auto;
+    display: none;
+  }
+  main .my_cash_gift_m {
+    display: block;
+  }
+  main .my_cash_gift_m ul li {
+    font-size: 15px;
+    margin: 10px auto;
+  }
+  main .my_cash_gift_m ul li .gift_m_title {
+    border-top: 1px solid #eee;
+    border-bottom: 2px solid #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14px;
+    align-items: center;
+    padding: 15px 10px;
+  }
+  main .my_cash_gift_m ul li .gift_m_title > div {
+    width: 50%;
+    margin: 0;
+  }
+  main .my_cash_gift_m ul li .gift_m_title > div:first-child {
+    text-align: left;
+  }
+  main .my_cash_gift_m ul li .gift_m_title > div:last-child {
+    text-align: right;
+  }
+  main .my_cash_gift_m ul li .gift_m_title div.point {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  main .my_cash_gift_m ul li .gift_m_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background: #f5f5f5;
+    padding: 15px 10px;
+  }
+  main .my_cash_gift_m ul li .gift_m_content > div {
+    width: 50%;
+    padding: 5px 0;
+  }
+  main .my_cash_gift_m ul li .gift_m_content > div:nth-of-type(2n) {
+    text-align: right;
+    font-weight: bold;
+  }
+  main .my_cash_gift_m ul li .gift_m_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10px;
+  }
+  main .my_cash_gift_m ul li .gift_m_btn button {
+    width: 100px;
+    height: 30px;
+  }
+  main .my_cash_gift_m_src {
+    display: block;
+  }
+  main .my_cash_gift_m_src ul li {
+    font-size: 15px;
+    margin: 10px auto;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14px;
+    align-items: center;
+    padding: 15px 10px;
+    background: #f1f1f1;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_title > div {
+    width: 50%;
+    margin: 0;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_title > div:first-child {
+    text-align: left;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_title > div:last-child {
+    text-align: right;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_title div.point {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    border: 1px solid #ccc;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_content > div {
+    width: 50%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_content > div:nth-of-type(2n) {
+    border-left: 1px solid #ccc;
+    text-align: right;
+    font-weight: bold;
+    color: #6767a6;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_content > div:last-child {
+    border-bottom: none;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .my_cash_gift_m_src ul li .gift_m_btn button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    background: #555;
+    border-radius: 0;
+    color: #fff;
+    margin-top: -1px;
   }
   main .board_confirm .order_confirm_board li .title {
     -ms-flex-preferred-size: 40%;
