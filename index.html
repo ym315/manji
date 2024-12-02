@@ -495,20 +495,24 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+
+
   $(document).on('ready', function() {
 
-
-
-    $(".main_banner").slick({
-      dots: false,
-      infinite: true,
-      arrows: false,
-      autoplay:true,
-      // fade:true,
-      speed:1000,
-      slidesToShow: 1,
-      slidesToScroll: 1
+        $(".main_banner").slick({
+        lazyLoad: 'ondemand',
+        adaptiveHeight: false,
+        dots: false,
+        infinite: true,
+        arrows: false,
+        autoplay: true,
+        fade: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
     });
+    $(".main_banner").slick('setPosition');
+
 
     // 메인 이벤트 배너
     $('.main_event_detail').slick({

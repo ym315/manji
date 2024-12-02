@@ -457,24 +457,33 @@ main{
   }
   //메인 슬라이드 배너
 
-  .main_slide{
-    margin:0 !important;
-    .slider {width: 100%;}
-    .slick-slide {margin: 0px auto;}
-    .slick-slide img {width: 100%;}
-  
-    .slick-prev:before,
-    .slick-next:before {
-      color: black;
-    }
-    .slick-prev{left:5%}
-    .slick-next{right:5%}
+  .main_slide {
+    width: 100%;
+    margin: 0 !important;
+    overflow: hidden;
+    visibility: hidden; /* 초기 상태 숨김 */
+
+    .slick-initialized {visibility: visible;}
+    .slider{width:100%;}
+    .slick-track {display: flex !important;}
     .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
-    }    
-    .slick-active {opacity: .5;}
+      width: 100% !important;
+      margin: 0 auto;
+      text-align: center;
+      transition: all ease-in-out 0.3s;
+      opacity: 0.2;
+      img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+            }
+    }
+    .slick-prev:before, .slick-next:before{ color:black;}
+    .slick-prev{left:5%}
+    .slick-next {right: 5%;}
+    .slick-active {opacity: 0.5;}    
     .slick-current {opacity: 1;}
+
 
   }
 
@@ -1899,7 +1908,6 @@ main{
       flex-wrap: wrap;
       background: $f5;
       
-      .mo_pr_total{}
       .mo_pr_cal{
         @include display(flex,space-between,center);
         margin: 10px auto;

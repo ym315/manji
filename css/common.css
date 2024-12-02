@@ -641,23 +641,43 @@ main .main_search ul li a {
 }
 
 main .main_slide {
+  width: 100%;
   margin: 0 !important;
+  overflow: hidden;
+  visibility: hidden;
+  /* 초기 상태 숨김 */
+}
+
+main .main_slide .slick-initialized {
+  visibility: visible;
 }
 
 main .main_slide .slider {
   width: 100%;
 }
 
+main .main_slide .slick-track {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 main .main_slide .slick-slide {
-  margin: 0px auto;
+  width: 100% !important;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  opacity: 0.2;
 }
 
 main .main_slide .slick-slide img {
-  width: 100%;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-main .main_slide .slick-prev:before,
-main .main_slide .slick-next:before {
+main .main_slide .slick-prev:before, main .main_slide .slick-next:before {
   color: black;
 }
 
@@ -669,14 +689,8 @@ main .main_slide .slick-next {
   right: 5%;
 }
 
-main .main_slide .slick-slide {
-  -webkit-transition: all ease-in-out .3s;
-  transition: all ease-in-out .3s;
-  opacity: .2;
-}
-
 main .main_slide .slick-active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 main .main_slide .slick-current {
