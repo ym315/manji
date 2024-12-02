@@ -4283,6 +4283,9 @@ main .board_confirm .order_confirm_board li .title {
     width: 100px;
     height: 30px;
   }
+  main .my_cash_gift_m ul li .gift_m_btn_full button {
+    width: 100%;
+  }
   main .my_cash_gift_m_src {
     display: block;
   }
