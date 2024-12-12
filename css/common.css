@@ -101,6 +101,7 @@ textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   resize: none;
+  border-radius: 4px;
 }
 
 a {
@@ -114,6 +115,7 @@ input, textarea, select, button {
   height: 50px;
   vertical-align: middle;
   font-family: 'Noto Sans KR', sans-serif;
+  border-radius: 4px;
 }
 
 input::-webkit-input-placeholder {
@@ -365,6 +367,11 @@ header .head .head_notice .flowing_notice {
 
 header .head .head_notice .flowing_notice a {
   color: #fff;
+  display: inline-block;
+  color: #fff;
+  margin-right: 50px;
+  /* 공지 간격 조정 */
+  text-decoration: none;
 }
 
 header .head .head_main {
@@ -1633,10 +1640,36 @@ main .product ul.product_list li {
   width: 23%;
   margin-right: 2.66%;
   margin-bottom: 3%;
+  position: relative;
 }
 
 main .product ul.product_list li:nth-of-type(4n) {
   margin-right: 0;
+}
+
+main .product ul.product_list li.soldout::after {
+  content: '품절';
+  background: #232323;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 main .product ul.product_list li > div {
@@ -1780,6 +1813,18 @@ main .product .product_info .product_info_right .product_r_count {
   background: #f7f7f7;
 }
 
+main .product .product_info .product_info_right .product_r_count > span:first-child {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  text-align: left;
+}
+
+main .product .product_info .product_info_right .product_r_count > span:last-child {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  text-align: right;
+}
+
 main .product .product_info .product_info_right .product_r_count .count {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1790,7 +1835,8 @@ main .product .product_info .product_info_right .product_r_count .count {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
 }
 
 main .product .product_info .product_info_right .product_r_count .count span {
@@ -1817,11 +1863,19 @@ main .product .product_info .product_info_right .product_r_count .count span:las
   border-left: none;
 }
 
+main .product .product_info .product_info_right .product_r_count .count input[type="number"]::-webkit-inner-spin-button,
+main .product .product_info .product_info_right .product_r_count .count input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 main .product .product_info .product_info_right .product_r_count .count input[type="number"] {
+  -moz-appearance: textfield;
   width: 30px;
   height: 30px;
   border-color: #ccc;
   text-align: center;
+  border-radius: 0px;
 }
 
 main .product .product_info .product_info_right .product_r_total {
@@ -2196,8 +2250,39 @@ main .order_info h3.h3_nomargin {
   margin: 0 auto;
 }
 
+main .order_info .order_info_h3_input {
+  position: relative;
+}
+
+main .order_info .order_info_h3_input > .input_form {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 main .order_info .order_table input, main .order_info .order_table button, main .order_info .order_table select {
   height: 40px;
+}
+
+main .order_info .order_table .email01 {
+  width: 30%;
+  max-width: 200px;
+}
+
+main .order_info .order_table .email02 {
+  width: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+main .order_info .order_table .email03 {
+  width: 35%;
+  max-width: 250px;
+}
+
+main .order_info .order_table .email04 {
+  width: 32%;
+  margin-left: 1%;
 }
 
 main .order_info .order_table > div {
@@ -2229,6 +2314,18 @@ main .order_info .order_table .order_table_phone span {
   margin: 0 10px;
 }
 
+main .order_info .order_table .order_table_email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 main .order_info .order_table .order_table_address {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2252,6 +2349,7 @@ main .order_info .order_table .order_table_address input {
 
 main .order_info .order_table .order_table_address input.input_short {
   width: 25%;
+  margin-right: 8px;
 }
 
 main .input_form {
@@ -3906,6 +4004,15 @@ main .board_confirm .order_confirm_board li .title {
     width: 95%;
     max-width: 769px;
   }
+  main .order_info .order_info_h3_input > .input_form {
+    position: relative;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  main .order_info .order_info_h3_input > .input_form > input[type="checkbox"] {
+    margin-left: 0;
+  }
   main .order_info .order_table > div {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -3918,6 +4025,9 @@ main .board_confirm .order_confirm_board li .title {
   main .order_info .order_table > div > div {
     width: 100%;
     margin: 0;
+  }
+  main .order_info .order_table .order_name {
+    width: 100%;
   }
   main .order_info .order_table .order_table_phone {
     display: -webkit-box;

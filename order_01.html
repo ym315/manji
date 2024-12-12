@@ -96,7 +96,7 @@
                     </div>
                 </div>                
             </section>
-            <section class="order_info com_width">
+            <!-- <section class="order_info com_width">
                 <h3>주문자 정보</h3>
                 <div class="order_table">
                     <div>
@@ -136,31 +136,34 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="order_info">
-                <div class="input_form">
-                    <input type="checkbox" class="" id="same_info" name="same_info">
-                    <label for="same_info">주문인과 수취인이 동일인이면 체크해주세요</label></button>                
-                </div>
-                <h3>배송지 정보</h3>
-               
+            </section> -->
+            <section class="order_info">                
+                <div class="order_info_h3_input">
+                    <h3>배송지 정보</h3>    
+                    <div class="input_form">
+                        <input type="checkbox" class="" id="same_info" name="same_info">
+                        <label for="same_info">주문인과 수취인이 동일인이면 체크해주세요</label></button>                
+                    </div>           
+                </div>                
 
                 <div class="order_table">
                     <div>
                         <span class="title">받는 사람<span class="point_red">*</span></span>
-                        <span><input type="text"></span>
+                       <input type="text" class="order_name">
                     </div>
                     <div>
                         <span class="title">휴대폰 번호 <span class="point_red">*</span></span>
                         <div class="order_table_phone">
-                            <input type="number"><span class="">-</span><input type="number"><span class="">-</span><input type="number"><span class="">
+                            <input type="number"><span class="">-</span><input type="number"><span class="">-</span><input type="number">
                         </div>
                     </div>
                     <div>
                         <span class="title">이메일 <span class="point_red">*</span></span>
-                        <div>
-                            <input type="text"><span class="">@</span><input type="text">
-                            <select  name="email">
+                        <div class="order_table_email">
+                            <input type="text" class="email01">
+                            <span class="email02">@</span>
+                            <input type="text" class="email03">
+                            <select  name="email" class="email04">
                                 <option value="">직접입력</option>
                                 <option value="google.com">google.com</option>
                                 <option value="daum.net">daum.net</option>
